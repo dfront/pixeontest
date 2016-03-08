@@ -1,0 +1,41 @@
+<div class="row" hide ng-show="authService.user.authenticated"> 
+  <div class="col-md-4 col-md-push-4 col-md-pull-4 col-sm-4 col-sm-push-4 col-sm-pull-4">      
+    <h2 class="form-calculator-heading">Fill this form</h2>
+    <form name="formCalculator">
+      <label>String</label>
+      <input type="text" ng-model="calculatorService.field1" class="form-control" required autofocus>
+      <label>Number</label>
+      <input type="number" ng-model="calculatorService.field2" class="form-control" required>    
+
+
+      <button  ng-class="formCalculator.$valid ? 'btn-primary' : ''" class="btn btn-lg btn-block " ng-click="formCalculator.$valid && calculatorService.process()">
+	Process 
+      </button> 
+
+    </form>  
+    <button ng-show="formCalculator.$valid" class="btn btn-lg btn-block" ng-click="calculatorService.clear()">
+      Clear 
+    </button>
+  </div>
+</div>
+
+<div class="row"  hide ng-show="authService.user.authenticated && formCalculator.$valid">
+  <div class="col-md-4 col-md-push-4 col-md-pull-4 col-sm-4 col-sm-push-4 col-sm-pull-4"> 
+    <h2>Combination</h2>
+    <div class="row" ng-show="calculatorService.results1.length">
+      <div class="col-sm-6 col-md-6"> 
+	<h4>Result 1</h4>
+	  <span ng-repeat="result1 in calculatorService.results1"> <span ng-if="!$first">-x </span>{{ result1 }} </span>
+
+      </div>
+      <div class="col-sm-6 col-md-6" ng-show="calculatorService.results2.length">    
+	<h4>Result 2</h4>
+	{{calculatorService.results2}}     
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+

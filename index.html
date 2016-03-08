@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>Pixeontest</title>
+  <meta name="google-signin-client_id" content="1051839863756-dtrc971i89dm5322cash6pq6l9r37ffb.apps.googleusercontent.com">
+  <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
+  <link type="text/css" rel="stylesheet" href="bower_components/bootstrap-social/bootstrap-social.css" />
+
+  <link type="text/css" rel="stylesheet" href="app/main/assets/css/main.css" />
+</head>
+<body ng-app="app">
+  <ngmain></ngmain>
+  <div ui-view></div>
+ 
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>  
+  <script src="https://apis.google.com/js/client:plusone.js" ng-init="authService.handleClientLoad()"></script>
+
+  <script src="app/main/app.modules.js"></script>
+  <script src="app/main/services/main.js"></script>
+  <script src="app/main/directives/main.js"></script>
+
+  <script src="app/auth/app.modules.js"></script>
+  <script src="app/auth/services/auth.js"></script>
+  <script src="app/auth/directives/auth.js"></script>
+
+  <script src="app/calculator/app.modules.js"></script>
+  <script src="app/calculator/factories/calculator.js"></script>
+  <script src="app/calculator/services/calculator.js"></script>
+  <script src="app/calculator/directives/calculator.js"></script>
+
+  <script src="app/app.modules.js"></script>
+ 
+</body>
+</html>

@@ -1,0 +1,26 @@
+<nav class="navbar navbar-inverse navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <span class="navbar-brand">PixelTest   <small>{{mainService.chronometer}}</small></span>     
+    </div>  
+
+    <ul class="nav navbar-nav"> </ul>
+
+    <ul class="nav navbar-nav navbar-right" hide ng-show="authService.user.authenticated"> 
+    
+      <li>
+	<img ng-src="{{authService.user.image}}" />
+      </li>
+      <li>
+	<a href="#">
+	  {{authService.user.name}} 
+	</a>
+      </li>
+      <li><a ui-sref="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <ngauth></ngauth>
+  <ngcalculator></ngcalculator>
+</div>
